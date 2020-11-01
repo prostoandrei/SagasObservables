@@ -1,12 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Sagas from './__compared__/sagas';
+import Observables from './__compared__/observables'
+import { Provider } from 'react-redux'
+import { store } from './__compared__/sagas/store'
+import './index.css';
+
+const TARGET = 'SAGAS'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      {TARGET === 'SAGAS'
+        ? <Sagas />
+        : <Observables />
+      }
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
