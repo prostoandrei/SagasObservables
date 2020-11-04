@@ -1,11 +1,9 @@
-const LOAD_SMTH = 'LOAD_SMTH';
-const LOAD_SMTH_SUCCESS = 'LOAD_SMTH_SUCCESS';
-const LOAD_SMTH_ERROR = 'LOAD_SMTH_ERROR';
+import { USER_FETCH_FAILED, USER_FETCH_REQUESTED, USER_FETCH_SUCCEEDED } from '../actions';
 
 const initialState = {
     loading: false,
     success: false,
-    data: null,
+    user: null,
     error: null,
 }
 
@@ -14,22 +12,22 @@ export default function reducer(
     { type, payload }
 ) {
     switch (type) {
-      case LOAD_SMTH: {
+      case USER_FETCH_REQUESTED: {
         return {
             ...state,
             loading: true,
         }
       }
         
-      case LOAD_SMTH_SUCCESS: {
+      case USER_FETCH_SUCCEEDED: {
         return {
             ...state,
-            data: payload.data,
+            user: payload.user,
             loading: false,
         };
       }
         
-      case LOAD_SMTH_ERROR:
+      case USER_FETCH_FAILED:
         return {
             ...state,
             error: payload.error,

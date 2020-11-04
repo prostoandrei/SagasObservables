@@ -1,5 +1,5 @@
-import '../App.css';
-import { Filters } from '../../ui';
+import '../../App.css';
+import { FiltersContainer } from './filters';
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
         <p>
           Some Sagas shit
         </p>
-        <Filters />
+        <FiltersContainer />
       </header>
     </div>
   );

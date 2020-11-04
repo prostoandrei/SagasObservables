@@ -2,20 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import Sagas from './__compared__/sagas';
-import Observables from './__compared__/observables'
+// import Observables from './__compared__/observables'
 import { Provider } from 'react-redux'
 import { store } from './__compared__/sagas/store'
 import './index.css';
 
-const TARGET = 'SAGAS'
+// const TARGET = 'SAGAS'
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      {TARGET === 'SAGAS'
-        ? <Sagas />
+      <Sagas />
+      {/* {TARGET === 'SAGAS'
         : <Observables />
-      }
+      } */}
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

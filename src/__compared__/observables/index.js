@@ -1,5 +1,4 @@
-import '../App.css';
-import { Filters } from '../../ui';
+import { FiltersComponent } from '../../ui';
 
 function App() {
   return (
@@ -8,7 +7,7 @@ function App() {
         <p>
           Some Sagas shit
         </p>
-        <Filters />
+        <FiltersComponent />
       </header>
     </div>
   );
