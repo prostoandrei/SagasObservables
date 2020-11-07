@@ -1,4 +1,4 @@
-import { call, put, takeEvery, takeLatest } from 'redux-saga/effects';
+import { call, put, takeLatest } from 'redux-saga/effects';
 import { Api } from '../../api';
 import {
     USER_FETCH_REQUESTED,
@@ -6,9 +6,8 @@ import {
 import { userFetchFailed, userFetchSucceeded } from '../../actions';
 
 function* fetchUser(action) {
-    
     try {
-        const user = yield call(Api.fetchUser, action.payload.userId)
+        const user = yield call(Api.fetchUser, action)
         yield put(userFetchSucceeded(user))
     } catch (error) {
         yield put(userFetchFailed())
@@ -16,5 +15,5 @@ function* fetchUser(action) {
 }
 
 export function *fetchUserSaga() {
-    yield takeEvery(USER_FETCH_REQUESTED, fetchUser)
+    yield takeLatest(USER_FETCH_REQUESTED, fetchUser)
 }

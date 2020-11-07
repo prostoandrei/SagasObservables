@@ -1,6 +1,4 @@
 
-import styles from './App.css'
-
 export const Logo = () => {
     return (
         <div className='App-logo'>

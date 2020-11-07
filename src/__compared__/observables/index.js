@@ -1,13 +1,14 @@
-import { FiltersComponent } from '../../ui';
+import { FiltersContainer } from '../../ui';
+import '../../App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <p>
-          Some Sagas shit
+          Observables
         </p>
-        <FiltersComponent />
+        <FiltersContainer />
       </header>
     </div>
   );

@@ -23,6 +23,7 @@ export default function reducer(
         return {
             ...state,
             user: payload.user,
+            error: false,
             loading: false,
         };
       }
@@ -30,7 +31,7 @@ export default function reducer(
       case USER_FETCH_FAILED:
         return {
             ...state,
-            error: payload.error,
+            error: true,
             loading: false,
         };
       default:
